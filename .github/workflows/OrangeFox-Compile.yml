@@ -1,0 +1,31 @@
+name: OrangeFox - Builder
+
+on:
+  workflow_dispatch:
+  push:
+
+jobs:
+  build:
+    name: 🦊 Building OrangeFox Recovery
+    runs-on: ubuntu-latest
+    env:
+      GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+    permissions: write-all
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+
+    - name: OrangeFox Build Test
+      uses: UWU-TEAM/UWU-OrangeFox-Builder@main
+      with:
+        USER_NAME: 'UntuKemeng'
+        USER_EMAIL: 'jarbull87@gmail.com'
+        DEVICE_TREE: 'https://github.com/MRT-project/ORF_device_xiaomi_chime'
+        DEVICE_TREE_BRANCH: '12.1'
+        DEVICE_PATH: 'device/xiaomi/chime'
+        DEVICE_NAME: 'chime'
+        BUILD_TARGET: 'recovery'
+        TG_CHAT_ID: '${{ secrets.TG_CHAT_ID }}'
+        TG_TOKEN: '${{ secrets.TG_TOKEN }}'
+        MAINTAINER_URL: 'https://i.ibb.co.com/8gyjXq06/maintainer.png'
+        GH_RELEASE: 'true'
