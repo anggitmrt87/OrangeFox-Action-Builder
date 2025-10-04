@@ -2,7 +2,6 @@ name: OrangeFox - Builder
 
 on:
   workflow_dispatch:
-  push:
 
 jobs:
   build:
@@ -13,10 +12,10 @@ jobs:
     permissions: write-all
     steps:
     - name: Checkout
-      uses: actions/checkout@v4
+      uses: actions/checkout@v5
 
     - name: OrangeFox Build Test
-      uses: UWU-TEAM/UWU-OrangeFox-Builder@main
+      uses: MRT-project/UWU-OrangeFox-Builder@main
       with:
         USER_NAME: 'UntuKemeng'
         USER_EMAIL: 'jarbull87@gmail.com'
